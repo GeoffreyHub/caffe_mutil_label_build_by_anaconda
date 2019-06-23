@@ -132,18 +132,15 @@ Caffe_LINKER_LIBS: PUBLIC;/home/geoffrey/.conda/envs/caffe_27/lib/libboost_syste
 make all -j8
 ```
 如果出现一下字样, 编译成功.
-![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190623120835326-777334207.png)
-
+![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190623120835326-777334207.png)  
 用pycaffe测试一下:
 ![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190623121118889-1799973623.png) 
 
 # 2. 问题搜集
-
-1. ".Doxyfile" cannot be read.`问题
-![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190621132027822-991494759.png)
-解决方法:
-Doxyfile是文档系统, 卸载掉本地的即可.
-
+1. ".Doxyfile" cannot be read.`问题  
+![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190621132027822-991494759.png)  
+解决方法:  
+Doxyfile是文档系统, 卸载掉本地的即可.   
 2. 未定义的应用
 ![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190623124015132-675879207.png)
 安装了`libopencv`, 但是缺少头文件, 我`conda install opencv`解决.
