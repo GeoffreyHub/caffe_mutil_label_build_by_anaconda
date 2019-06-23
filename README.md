@@ -139,7 +139,7 @@ make all -j8
 1. ".Doxyfile" cannot be read.`问题
 ![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190621132027822-991494759.png)
 解决方法:
-Doxyfile是文档系统, 卸载掉本地的即可.
+Doxyfile是文档系统, 用于编译`./doc`文档, 卸载掉本地的即可.
 
 2. 未定义的应用
 ![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190623124015132-675879207.png)
