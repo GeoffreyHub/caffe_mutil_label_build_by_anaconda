@@ -5,7 +5,9 @@ caffe编译是一个繁琐个过程, 或多或少会遇到各种各样的问题,
 1. anaconda虚拟环境可以把环境和系统隔离, 相当于浓缩版`/usr/lib`+`/usr/include`, 在环境中安装包使用`conda install {包名称}=版本号`命令, 可以很方便的修改环境依赖;
 2. 我的caffe是添加了多标签的部分, 即label可以有多个, 可以直接用我修改好的caffe开始编译;
 3. cuda任然需要本地安装, 我的是manjarolinux, 使用`pacman -S cuda`安装. 
-4. 项目整体只在本地测试过, 如果有问题还请指出, 我会进一步完善.          
+4. 项目整体只在本地测试过, 如果有问题还请指出, 我会进一步完善.       
+
+[**>>>>> GitHub项目链接**](https://github.com/GeoffreyHub/caffe_mutil_label_build_by_anaconda/blob/master/README.md)   
 
      
 ------------------------            
@@ -132,15 +134,19 @@ Caffe_LINKER_LIBS: PUBLIC;/home/geoffrey/.conda/envs/caffe_27/lib/libboost_syste
 make all -j8
 ```
 如果出现一下字样, 编译成功.
-![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190623120835326-777334207.png)  
+![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190624103741582-1136525046.png)
+
+
 用pycaffe测试一下:
 ![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190623121118889-1799973623.png) 
 
 # 2. 问题搜集
-1. ".Doxyfile" cannot be read.`问题  
-![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190621132027822-991494759.png)  
-解决方法:  
-Doxyfile是文档系统, 卸载掉本地的即可.   
+
+1. ".Doxyfile" cannot be read.`问题
+![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190621132027822-991494759.png)
+解决方法:
+Doxyfile是文档系统, 卸载掉本地的即可.
+
 2. 未定义的应用
 ![](https://img2018.cnblogs.com/blog/1430038/201906/1430038-20190623124015132-675879207.png)
 安装了`libopencv`, 但是缺少头文件, 我`conda install opencv`解决.
