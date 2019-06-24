@@ -3,9 +3,11 @@ caffe编译是一个繁琐个过程, 或多或少会遇到各种各样的问题,
 ------------------------
 #### 一些说明:
 1. anaconda虚拟环境可以把环境和系统隔离, 相当于浓缩版`/usr/lib`+`/usr/include`, 在环境中安装包使用`conda install {包名称}=版本号`命令, 可以很方便的修改环境依赖;
-2. 我的caffe是添加了多标签的部分, 即label可以有多个, 可以直接用我修改好的caffe开始编译;
-3. cuda任然需要本地安装, 我的是manjarolinux, 使用`pacman -S cuda`安装. 
-4. 项目整体只在本地测试过, 如果有问题还请指出, 我会进一步完善.       
+2. 测试系统是Manjaro Linux, 但是使用anaconda+cmake, 应该和系统没有关系. 即使用其他linux系统或者windows也可以;
+3. anaconda环境名称为caffe_36, 但是python 3.6在编译完成caffe后, pychaffe编译出错. 于是换成了python2.7, 但是环境名称还没来得及改(虽然不影响);
+4. 我的caffe是添加了多标签的部分, 即label可以有多个, 可以直接用我修改好的caffe开始编译;
+5. cuda任然需要本地安装, 我的是manjarolinux, 使用`pacman -S cuda`安装. 
+6. 项目整体只在本地测试过, 如果有问题还请指出, 我会进一步完善.       
 
 [**>>>>> GitHub项目链接**](https://github.com/GeoffreyHub/caffe_mutil_label_build_by_anaconda/blob/master/README.md)   
 
@@ -17,7 +19,7 @@ caffe编译是一个繁琐个过程, 或多或少会遇到各种各样的问题,
 我编译完成后, 把用到的conda虚拟环境输出成了.yml文件.  重新编译时, 可以使用`conda env create -f caffe_36.yml`生成和我一模一样的虚拟环境,而不需要一个一个包重新安装. 
 
 ## (2) 激活虚拟环境
-环境名我定的名字是`caffe_36`, 代表python版本是3.6, 用于编译caffe环境. 如果使用第一步命令生成环境, 那么可以运行一下`source`命令激活.
+环境名我定的名字是`caffe_36`, 代表python版本是3.6(python3.6环境编译可以通过, 但是pycaffe编辑通过, 于是后来换成了python 2.7, ), 用于编译caffe环境. 如果使用第一步命令生成环境, 那么可以运行一下`source`命令激活.
 `source activate caffe_36`
 
 ## (3) cmake
